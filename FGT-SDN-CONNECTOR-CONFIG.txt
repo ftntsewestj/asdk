@@ -1,0 +1,65 @@
+config system sdn-connector
+  edit "AZConnector"
+    set type azure
+    set ha-status enable
+    set subscription-id "7e5cf977-89ca-4a54-8780-626100c23be4"
+    set resource-group "MyResourceGroup"
+    set azure-region local
+    config nic
+      edit "FGHA-A-Nic1"
+        config ip
+          edit "ipconfig1"
+            set public-ip "FGTAPClusterPublicIP"
+          next
+        end
+      next
+    end
+    config route-table
+      edit "FGTDefaultAPRouteTable"
+        config route
+          edit "toDefault"
+            set next-hop "10.2.2.4"
+          next
+        end
+      next
+    end
+    set server "local.azurestack.external"
+    set username "user01@ftntsewestjgmail.onmicrosoft.com"
+    set password Fortinet123
+    set login-endpoint "https://login.microsoftonline.com/7c43a001-e22c-418b-9be5-e57ff3a37fc3"
+    set resource-url "https://management.ftntsewestjgmail.onmicrosoft.com/ea8615b8-baef-4844-9933-b283124e4759"
+  next
+end
+
+config system sdn-connector
+  edit "AZConnector"
+    set type azure
+    set ha-status enable
+    set subscription-id "7e5cf977-89ca-4a54-8780-626100c23be4"
+    set resource-group "MyResourceGroup"
+    set azure-region local
+    config nic
+      edit "FGHA-B-Nic1"
+        config ip
+          edit "ipconfig1"
+            set public-ip "FGTAPClusterPublicIP"
+          next
+        end
+      next
+    end
+    config route-table
+      edit "FGTDefaultAPRouteTable"
+        config route
+          edit "toDefault"
+            set next-hop "10.2.2.5"
+          next
+        end
+      next
+    end
+    set server "local.azurestack.external"
+    set username "user01@ftntsewestjgmail.onmicrosoft.com"
+    set password Fortinet123
+    set login-endpoint "https://login.microsoftonline.com/7c43a001-e22c-418b-9be5-e57ff3a37fc3"
+    set resource-url "https://management.ftntsewestjgmail.onmicrosoft.com/ea8615b8-baef-4844-9933-b283124e4759"
+  next
+end

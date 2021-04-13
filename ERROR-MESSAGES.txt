@@ -1,0 +1,47 @@
+1. login-endpoint is wrong
+
+get token failed
+azd sdn connector AZConnector failed to get token
+azd sdn connector AZConnector prepare to update
+azd sdn connector AZConnector getting token
+404
+
+slave's configuration is not in sync with master's, sequence:1
+HA event
+Become HA master mode 2
+
+resourcegroup:MyResourceGroup, sub:7e5cf977-89ca-4a54-8780-626100c23be4
+get pubip FGTAPClusterPublicIP
+{"error":{"code":"AuthenticationFailed","message":"Authentication failed. The 'Authorization' header is missing."}}
+remove is done 0
+get route table FGTDefaultAPRouteTable
+result:401
+{"error":{"code":"AuthenticationFailed","message":"Authentication failed. The 'Authorization' header is missing."}}
+nexthop and add is done
+
+
+2. Subscription is wrong
+azd sdn connector AZConnector prepare to update
+azd sdn connector AZConnector start updating
+404
+{"error":{"code":"InvalidResourceNamespace","message":"The resource namespace 'Microsoft.Network' is invalid."}}
+azd failed to list all public IP for 8fcf0764-77c4-4a06-88c6-419ede1510bb
+azd failed to get ip addr list
+azd reap child pid: 402
+
+3. DNS is wrong
+HA event
+Become HA master mode 2
+azd sdn connector  getting token
+token size:1703
+token expire on:1618298002
+resourcegroup:MyResourceGroup, sub:7e5cf977-89ca-4a54-8780-626100c23be4
+get pubip FGTAPClusterPublicIP
+curl DNS lookup failed: management.local.azurestack.external
+
+remove is done 0
+get route table FGTDefaultAPRouteTable
+curl DNS lookup failed: management.local.azurestack.external
+result:-1
+
+nexthop and add is done
